@@ -4,6 +4,12 @@
             <h3>Daftar <?= $judul; ?></h3>
             <hr>
 
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <a href="<?= base_url(); ?>mahasiswa/tambah" class="btn btn-sm btn-success">Tambah Data</a>
+                </div>
+            </div>
+
             <table class="table mt-2">
                 <thead>
                     <tr>
