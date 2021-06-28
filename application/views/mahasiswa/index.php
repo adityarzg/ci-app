@@ -1,4 +1,16 @@
 <div class="container mt-3">
+
+    <?php if($this->session->flashData('flash') ) : ?>
+    <div class="row">
+        <div class="col-md-12 mt-3">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Data Mahasiswa <strong>Berhasil</strong> <?= $this->session->flashData('flash'); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
             <h3>Daftar <?= $judul; ?></h3>
@@ -25,9 +37,9 @@
                             <th><?= $no++ ?></th>
                             <th><?= $mhs['nama'] ?></th>
                             <th>
-                                <a href="<?= base_url(); ?>/mahasiswa/detail/<?= $mhs['nim']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-primary">Detail</a>
-                                <a href="<?= base_url(); ?>/mahasiswa/ubah/<?= $mhs['nim']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-success tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-nim="<?= $mhs['nim'] ?>">Edit</a>
-                                <a href="<?= base_url(); ?>/mahasiswa/hapus/<?= $mhs['nim']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
+                                <a href="<?= base_url(); ?>/mahasiswa/detail/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-primary">Detail</a>
+                                <a href="<?= base_url(); ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-success tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-nim="<?= $mhs['id'] ?>">Edit</a>
+                                <a href="<?= base_url(); ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                             </th>
                         </tr>
                     <?php endforeach ?>
