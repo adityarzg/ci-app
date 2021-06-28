@@ -1,14 +1,14 @@
 <div class="container mt-3">
 
-    <?php if($this->session->flashData('flash') ) : ?>
-    <div class="row">
-        <div class="col-md-12 mt-3">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data Mahasiswa <strong>Berhasil</strong> <?= $this->session->flashData('flash'); ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <?php if ($this->session->flashData('flash')) : ?>
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Data Mahasiswa <strong>Berhasil</strong> <?= $this->session->flashData('flash'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             </div>
         </div>
-    </div>
     <?php endif; ?>
 
     <div class="row">
@@ -22,7 +22,23 @@
                 </div>
             </div>
 
+            <div class="row mt-3">
+                <div class="col-md-8">
+                    <form action="" method="post">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cari data mahasiswa.." name="keyword">
+                            <button class="btn btn-warning" type="submit">Cari</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <table class="table mt-2">
+                <?php if (empty($mahasiswa)) : ?>
+                    <div class="alert alert-danger col-md-8 mt-3" role="alert">
+                        Data Mahasiswa Tidak Ditemukan!
+                    </div>
+                <?php endif; ?>
                 <thead>
                     <tr>
                         <th scope="col">No.</th>
@@ -38,7 +54,7 @@
                             <th><?= $mhs['nama'] ?></th>
                             <th>
                                 <a href="<?= base_url(); ?>/mahasiswa/detail/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-primary">Detail</a>
-                                <a href="<?= base_url(); ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-success tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-nim="<?= $mhs['id'] ?>">Edit</a>
+                                <a href="<?= base_url(); ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-success" data-nim="<?= $mhs['id'] ?>">Edit</a>
                                 <a href="<?= base_url(); ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                             </th>
                         </tr>
