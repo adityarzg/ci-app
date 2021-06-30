@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12 mt-3">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    Data Mahasiswa <strong>Berhasil</strong> <?= $this->session->flashData('flash'); ?>
+                    Data Peoples <strong>Berhasil</strong> <?= $this->session->flashData('flash'); ?>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
@@ -36,10 +36,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
                             <?php foreach ($peoples as $ppl) : ?>
                                 <tr>
-                                    <th><?= $no++ ?></th>
+                                    <th><?= ++$start ?></th>
                                     <td><?= $ppl['nama'] ?></td>
                                     <td><?= $ppl['email'] ?></td>
                                     <td><?= $ppl['perusahaan'] ?></td>
@@ -53,6 +52,7 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <?= $this->pagination->create_links(); ?>
                 </div>
             </div>
         </div>
