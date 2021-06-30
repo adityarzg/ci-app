@@ -12,7 +12,7 @@
     <!-- My Css -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 
-    <title><?= $judul; ?></title>
+    <title>Halaman <?= $judul; ?></title>
 </head>
 
 <body>
@@ -28,6 +28,7 @@
                     <a class="nav-link" aria-current="page" href="<?= base_url(); ?>">Home</a>
                     <a class="nav-link" href="<?= base_url(); ?>about">About</a>
                     <a class="nav-link" href="<?= base_url(); ?>mahasiswa">Mahasiswa</a>
+                    <a class="nav-link" href="<?= base_url(); ?>peoples">Peoples</a>
                 </div>
             </div>
         </div>

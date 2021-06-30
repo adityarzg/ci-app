@@ -34,11 +34,6 @@
             </div>
 
             <table class="table mt-2">
-                <?php if (empty($mahasiswa)) : ?>
-                    <div class="alert alert-danger col-md-8 mt-3" role="alert">
-                        Data Mahasiswa Tidak Ditemukan!
-                    </div>
-                <?php endif; ?>
                 <thead>
                     <tr>
                         <th scope="col">No.</th>
@@ -54,13 +49,18 @@
                             <th><?= $mhs['nama'] ?></th>
                             <th>
                                 <a href="<?= base_url(); ?>/mahasiswa/detail/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-primary">Detail</a>
-                                <a href="<?= base_url(); ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-success" data-nim="<?= $mhs['id'] ?>">Edit</a>
+                                <a href="<?= base_url(); ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-success">Edit</a>
                                 <a href="<?= base_url(); ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                             </th>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
+            <?php if (empty($mahasiswa)) : ?>
+                <div class="alert alert-warning col-md-12 mt-3" role="alert">
+                    Data Mahasiswa Tidak Ditemukan!
+                </div>
+            <?php endif; ?>
 
         </div>
     </div>
