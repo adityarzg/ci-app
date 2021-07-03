@@ -1,6 +1,7 @@
 <div class="container mt-3">
 
-    <?php if ($this->session->flashData('flash')) : ?>
+    <div class="flash-data" data-flashdata="<?= $this->session->flashData('flash'); ?>"></div>
+    <!-- <?php if ($this->session->flashData('flash')) : ?>
         <div class="row">
             <div class="col-md-12 mt-3">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -9,7 +10,7 @@
                 </div>
             </div>
         </div>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
@@ -50,7 +51,7 @@
                             <th>
                                 <a href="<?= base_url(); ?>/mahasiswa/detail/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-primary">Detail</a>
                                 <a href="<?= base_url(); ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-success">Edit</a>
-                                <a href="<?= base_url(); ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
+                                <a href="<?= base_url(); ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" style="text-decoration: none;" class="badge rounded-pill bg-danger tombol-hapus">Hapus</a>
                             </th>
                         </tr>
                     <?php endforeach ?>
