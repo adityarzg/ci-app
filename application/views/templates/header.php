@@ -25,10 +25,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="<?= base_url(); ?>">Home</a>
-                    <a class="nav-link" href="<?= base_url(); ?>about">About</a>
-                    <a class="nav-link" href="<?= base_url(); ?>mahasiswa">Mahasiswa</a>
-                    <a class="nav-link" href="<?= base_url(); ?>peoples">Peoples</a>
+                    <a class="nav-link <?php if($this->uri->segment(1) == ""){echo "active";}?>" aria-current="page" href="<?= base_url(); ?>">Home</a>
+                    <a class="nav-link <?php if($this->uri->segment(1) == "about"){echo "active";}?>" href="<?= base_url(); ?>about">About</a>
+                    <a class="nav-link <?php if($this->uri->segment(1) == "mahasiswa"){echo "active";}?>" href="<?= base_url(); ?>mahasiswa">Mahasiswa</a>
+                    <a class="nav-link <?php if($this->uri->segment(1) == "peoples"){echo "active";}?>" href="<?= base_url(); ?>peoples">Peoples</a>
                 </div>
             </div>
         </div>
